@@ -1,0 +1,46 @@
+<div class="row">
+  <section class="col-md-5 col-md-offset-4 col-sm-7 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <form name="myform"
+      ng-submit="register()"
+      novalidate>
+
+      <h1>Register</h1>
+      <p>To access site features</p>
+
+      <p class="error formerror" ng-show="message">{{ message }}</p>
+      <div class="form-group" ng-class="{ 'has-error' : myform.firstname.$invalid && myform.firstname.$touched }">
+        <input class="form-control" type="firstname" name="firstname" placeholder="First Name"
+          ng-model="user.firstname" ng-required="true">
+        <p class="help-block"
+          ng-show="myform.firstname.$invalid && myform.firstname.$touched">
+          First Name is required</p>
+      </div><!-- form-group -->
+      
+      <div class="form-group" ng-class="{ 'has-error' : myform.lastname.$invalid && myform.lastname.$touched }">
+        <input class="form-control" type="lastname" name="lastname" placeholder="Last Name"
+          ng-model="user.lastname" ng-required="true">
+        <p class="help-block"
+          ng-show="myform.lastname.$invalid && myform.lastname.$touched">
+          Last Name is required</p>
+      </div><!-- form-group -->
+      
+      <div class="form-group" ng-class="{ 'has-error' : myform.email.$invalid && myform.email.$touched }">
+        <input class="form-control" type="email" name="email" placeholder="Email"
+          ng-model="user.email" ng-required="true">
+        <p class="help-block"
+          ng-show="myform.email.$invalid && myform.email.$touched">
+          Must be a valid email</p>
+      </div><!-- form-group -->
+      <div class="form-group" ng-class="{ 'has-error' : myform.password.$invalid && myform.password.$touched }">
+        <input class="form-control" type="password" name="password" placeholder="Password"
+          ng-model="user.password" ng-required="true">
+        <p class="help-block"
+          ng-show="myform.password.$invalid && myform.password.$touched">
+          password is required</p>
+      </div><!-- form-group -->
+      <button type="submit" class="btn btn-primary"
+        ng-disabled="myform.$invalid">Register</button>
+      <p>or <a href="#/login">login</a></p>
+    </form>
+  </section>
+</div><!-- row -->

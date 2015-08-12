@@ -1,0 +1,33 @@
+<div class="row">
+  <section class="col-md-4 col-md-offset-4 col-sm-5 col-sm-offset-4 col-xs-8 col-xs-offset-2 ">
+    <form name="myform"
+      ng-submit="login()"
+      novalidate>
+
+      <h1>Hi there!</h1>
+      <p>Log-in to access the awesomeness!</p>
+
+      <p class="error formerror" ng-show="message">{{ message }}</p>
+      <div class="form-group" ng-class="{ 'has-error' : myform.email.$invalid && myform.email.$touched }">
+        <input class="form-control" type="email" name="email" placeholder="Email"
+        ng-model="user.email" ng-required="true">
+      <p class="help-block"
+        ng-show="myform.email.$invalid && myform.email.$touched">
+        Must be a valid email</p>
+      </div><!-- form-group -->
+      
+      <div class="form-group" ng-class="{ 'has-error' : myform.password.$invalid && myform.password.$touched }" >
+        <input class="form-control" type="password" name="password" placeholder="Password"
+        ng-model="user.password" ng-required="true">
+      <p class="help-block"
+        ng-show="myform.password.$invalid && myform.password.$touched">
+        password is required</p>
+      </div>
+      
+
+      <button type="submit" class="btn btn-primary"
+        ng-disabled="myform.$invalid">Login</button>
+      <p>or <a href="#/register">register</a></p>
+    </form>
+  </section>
+</div><!-- row -->

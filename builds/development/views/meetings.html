@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-5 col-md-offset-4 cont">
+    <h1 class="text-center">Add Meeting</h1>
+    <form class="form-inline center-form"
+      name="myform"
+      ng-submit="addMeeting()"
+      novalidate>
+      <div class="form-group">
+        <input class="form-control" type="text" name="meetingname"
+        placeholder="Meeting name"
+          ng-model="meetingname" ng-required="true">
+      </div><!-- form-group -->
+      <button type="submit" class="btn btn-success"
+        ng-disabled="myform.$invalid">+</button>
+    </form>
+    <div class="row">
+      
+     <div class="meetings">
+        <hr class="style-one">
+        <h2 class="text-center">Your meetings</h2>
+        <table class="table">
+          <tr class="meeting" ng-repeat="(key, meeting) in meetings">
+
+            <td >{{meeting.name}}</td>
+            <td class="pull-right">
+              <a class="btn btn-primary btn-xs"
+            ng-href="#/checkins/{{currentUser.regUser}}/{{meeting.$id}}" data-tooltip="Check-in user">
+            <i class="fa fa-check"></i></a>
+              <a class="btn btn-primary btn-xs"
+            ng-href="#/checkins/{{currentUser.regUser}}/{{meeting.$id}}/checkinsList" data-tooltip="Checkin user List">
+           <i class="fa fa-list"></i></a>
+              <button class="btn btn-danger btn-xs"
+              confirmation-needed = "Are you sure you want to delete this checkin?"
+            ng-click="deleteMeeting(key)" data-tooltip="Delete meeting">
+           <i class="fa fa-trash-o"></i></button>
+            </td>
+          </tr><!-- meeting list -->
+        </table>
+     </div><!-- meetings -->
+     
+  </div><!-- row meetings -->
+  </div> <!-- col-md-5 -->
+</div><!-- row -->
