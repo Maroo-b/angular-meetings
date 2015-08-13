@@ -7,7 +7,7 @@
       <h1>Hi there!</h1>
       <p>Log-in to access the awesomeness!</p>
 
-      <p class="error formerror" ng-show="message">{{ message }}</p>
+      <p class="alert alert-danger" ng-show="message">{{ message }}</p>
       <div class="form-group" ng-class="{ 'has-error' : myform.email.$invalid && myform.email.$touched }">
         <input class="form-control" type="email" name="email" placeholder="Email"
         ng-model="user.email" ng-required="true">

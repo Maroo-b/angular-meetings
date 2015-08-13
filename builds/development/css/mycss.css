@@ -3,7 +3,7 @@
 body { 
   padding-top: 70px;
   font-family: Merriweather, serif;
-  font-size: 100%;
+  font-size: 15px;
   line-height: 160%;
   *zoom: 1;
   
@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 p {
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .top {
@@ -33,7 +33,7 @@ header .navbar{
 
 header .navbar-default  .navbar-nav > li > a {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 header .navbar-default  .navbar-nav > li > a:hover {
@@ -42,12 +42,29 @@ header .navbar-default  .navbar-nav > li > a:hover {
 
 .userInfo{
   color: #fff;
-  padding: 15px 10px 5px;
+  padding: 12px 10px 5px;
   font-size: 16px;
 }
 
 /*meetings*/
-
+@media(max-width: 987px){
+ .no-gutter{
+    padding-left:0;
+    margin-left: -15px;
+  }  
+}
+@media(min-width: 1000px) and (max-width: 1199px){
+ .no-gutter{
+    padding-left:0;
+    margin-left: -5px;
+  }  
+}
+@media(min-width: 1200px){
+ .no-gutter{
+    padding-left:0;
+    margin-left: -45px;
+  }  
+}
 .cont{
   background: #D4D4D8;
   /*padding: 20px 60px; */
@@ -57,7 +74,7 @@ header .navbar-default  .navbar-nav > li > a:hover {
 
 .center-form{
   margin: 0 auto;
-  width: 70%;
+  width: 56%;
   padding-top: 10px;
 }
 

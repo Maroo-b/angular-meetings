@@ -6,8 +6,8 @@
 
       <h1>Register</h1>
       <p>To access site features</p>
-
-      <p class="error formerror" ng-show="message">{{ message }}</p>
+      
+      <p class="alert alert-danger" ng-show="message">{{ message }}</p>
       <div class="form-group" ng-class="{ 'has-error' : myform.firstname.$invalid && myform.firstname.$touched }">
         <input class="form-control" type="firstname" name="firstname" placeholder="First Name"
           ng-model="user.firstname" ng-required="true">
